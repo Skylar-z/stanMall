@@ -1,0 +1,3 @@
+<view>
+商品分类列表{{categoryId}}
+</view>

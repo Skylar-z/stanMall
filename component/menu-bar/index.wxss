@@ -1,0 +1,32 @@
+/* component/iw-menu-tabs/index.wxss */
+.menu-tabs {
+  width: 100%;
+  overflow: hidden;
+  padding: 20rpx 0;
+  background: #fff;
+  white-space: nowrap;
+}
+
+.scroll-x{
+  width: auto;
+  overflow:hidden;
+}
+
+.cell {
+  margin: 0 32rpx;
+  display: inline-block;
+  text-align: center;
+}
+
+.img{
+  width:120rpx;
+  height: 120rpx;
+}
+
+.circle{
+  border-radius: 50%;
+}
+
+.title{
+  font-size: 26rpx;
+}

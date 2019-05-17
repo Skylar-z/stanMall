@@ -1,0 +1,109 @@
+<!-- pages/mine/index.wxml
+<view class="personal" style='background-image:url("http://aliyun121.icjs.ink/resource/iwhale-ui/pi.png")'>
+  <view class="personal-avatar">
+    <image src="http://aliyun121.icjs.ink/resource/iwhale-ui/avatar.png" />
+  </view>
+  <view class="personal-text" wx:if='{{userInfo.username}}'>
+    <view class='username'>iWhale</view>
+    <view class='slogan'>微信小程序UI组件</view>
+  </view>
+  <view class="personal-auth" data-url='/pages/login/index' wx:else  bindtap="turntologin">
+ 登陆
+  </view>
+
+  <!-- <view class="personal-auth">
+    <button class="personal-getauth"  open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 微信登陆
+     </button>
+  </view> 
+nfo.username}}'>
+    <view class='username'>iWhale</view>
+    <view class='slogan'>微信小程序UI组件</view>
+  </view>
+  <view class="personal-auth" data-url='/pages/login/index' wx:else  bindtap="turntologin">
+ 登陆
+  </view>
+
+  <!-- <view class="personal-auth">
+    <button class="personal-getauth"  open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 微信登陆
+     </button>
+  </view> 
+
+  <view class='personal-right'>
+    <image src='../../images/common/sign.png'></image>每日签到
+  </view>
+</view>
+
+
+<iw-cell-group>
+  <block wx:for='{{modules}}' wx:key='unique'>
+    <iw-cell icon='{{item.icon}}' title='{{item.title}}' isLink></iw-cell>
+  </block>
+</iw-cell-group>
+
+<iw-button iw-class='iw-mt-10' bind:click='handleLogout' customBackground='#fff' long customColor='#F24A5D' size="small" wx:if='{{userInfo.username}}'>退出登录</iw-button>-->
+
+<scroll-view scroll-y class="scrollPage">
+  <view class="UCenter-bg">
+
+
+    <view class="bg-gradual-green padding radius text-center shadow-blur">
+
+      <view wx:if="{{userInfo}}" class="personal-avatar">
+        <image src="{{userInfo.avatarUrl}}" class="png" mode="widthFix"></image>
+        <view>{{userInfo.nickName}}</view>
+      </view>
+
+      <view wx:else class="personal-avatar">
+        <image wx-else src="http://aliyun121.icjs.ink/resource/iwhale-ui/avatar.png" class="png" mode="widthFix"></image>
+        <view wx-else>登陆微信</view>
+      </view>
+
+      <button class="wechat-login" open-type="getUserInfo" bindgetuserinfo="getUserInfo">登陆微信</button>
+    </view>
+
+  </view>
+  <view class="padding flex text-center text-grey bg-white shadow-warp">
+    <view class="flex flex-sub flex-direction solid-right">
+      <view class="text-xxl text-orange">{{visitTotal}}</view>
+      <view class="margin-top-sm">
+        <text class="cuIcon-attentionfill"></text> View</view>
+    </view>
+    <view class="flex flex-sub flex-direction solid-right">
+      <view class="text-xxl text-blue">{{starCount}}</view>
+      <view class="margin-top-sm">
+        <text class="cuIcon-favorfill"></text> Star</view>
+    </view>
+    <view class="flex flex-sub flex-direction">
+      <view class="text-xxl text-green">{{forksCount}}</view>
+      <view class="margin-top-sm">
+        <text class="cuIcon-fork"></text> Fork</view>
+    </view>
+  </view>
+  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius">
+    <view class="cu-item arrow">
+      <view class="content" bindtap="CopyLink" data-link="https://github.com/weilanwl/ColorUI">
+        <text class="cuIcon-github text-grey"></text>
+        <text class="text-grey">GitHub</text>
+      </view>
+    </view>
+    <view class="cu-item arrow">
+      <navigator class="content" url="/pages/about/log/log" hover-class="none">
+        <text class="cuIcon-formfill text-green"></text>
+        <text class="text-grey">我的地址</text>
+      </navigator>
+    </view>
+    <view class="cu-item arrow">
+      <view class="content" bindtap="showQrcode">
+        <text class="cuIcon-appreciatefill text-red"></text>
+        <text class="text-grey">我的订单</text>
+      </view>
+    </view>
+    <view class="cu-item arrow">
+      <button class="cu-btn content" open-type="feedback">
+        <text class="cuIcon-writefill text-cyan"></text>
+        <text class="text-grey">关于我们</text>
+      </button>
+    </view>
+  </view>
+  <view class="cu-tabbar-height"></view>
+</scroll-view>

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "iw-cell-group": "/component/cell-group/index",
+    "iw-cell": "/component/cell/index",
+    "iw-button": "/component/button/index"
+  }
+}

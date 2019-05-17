@@ -1,0 +1,53 @@
+/**index.wxss**/
+
+.weapp-add-tip {
+  position: relative;
+  z-index: 100;
+}
+
+.weapp-add-tip-text {
+  position: fixed;
+  right: 10rpx;
+  top: 10rpx;
+  color: #000;
+  font-size: 22rpx;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 2rpx 2rpx 2rpx rgb(223, 223, 223);
+  padding: 15rpx 20rpx;
+  border-radius: 30rpx;
+  transition: all 400ms ease-in;
+}
+
+.weapp-add-tip-text:after {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid rgb(255, 255, 255);
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -5px;
+  right: 132rpx;
+}
+
+.goods-list{
+  padding-bottom: 30rpx;
+}
+
+.tag{
+  background: #ff9900;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40rpx;
+  width: 80rpx;
+}
+
+.menu-tabs{
+  height:unset
+}
+
+.text-center{
+  text-align: center;
+}

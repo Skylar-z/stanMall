@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "iw-swiper": "/component/swiper/index",
+    "iw-menu-bar": "/component/menu-bar/index",
+    "iw-goods-cell": "/component/goods-cell/index"
+  }
+}

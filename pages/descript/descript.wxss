@@ -1,0 +1,23 @@
+/* pages/descript/descript.wxss */
+.cu-card>.cu-item {
+  margin:0;
+  border-radius:0;
+  
+}
+.cu-list.menu-avatar>.cu-item .content {
+  left:20rpx;
+}
+.cu-list.menu-avatar>.cu-item .content.flex-sub {
+  width:93%
+}
+.text-title{
+  font-size: 30rpx;
+  padding:10px
+}
+.cu-list{
+  margin-top:20px;
+  margin-bottom:50px;
+}
+.wxParse-p{
+  padding:10px;
+}
