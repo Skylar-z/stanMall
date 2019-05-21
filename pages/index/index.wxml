@@ -12,13 +12,12 @@
       <text class="text-center">{{item.name}}</text>
     </view>
   </view>
-
 </block>
 
 <view class='goods-list'>
   <block wx:for='{{goods}}' wx:key="unique" >
     <iw-goods-cell pic='{{item.pic}}' name='{{item.name}}' minPrice='{{item.minPrice}}' originalPrice='{{item.originalPrice}}' numberOrders='销量 {{item.numberOrders}}' primeCostVisible footerVisible bindtap="showDesc" data-id="{{item.id}}">
-    <view slot='tag' class='tag'>{{item.characteristic}}</view>
+    <view slot='tag' class='tag' wx:if="{{item.tags}}">{{item.tags}}</view>
     </iw-goods-cell>
   </block>
 </view>

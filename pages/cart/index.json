@@ -2,6 +2,8 @@
   "usingComponents": {
     "van-card":"/dist/card/index",
     "van-tag":"/dist/tag/index",
-    "van-submit-bar":"/dist/submit-bar/index"
+    "van-submit-bar":"/dist/submit-bar/index",
+    "van-button":"/dist/button/index",
+    "num-select":"/component/num-select/index"
   }
 }

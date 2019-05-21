@@ -3,20 +3,17 @@ const request = require('../../utils/request.js')
 const app = getApp()
 Page({
   data: {
-    swipers: [
-      { pic: 'https://gd4.alicdn.com/imgextra/i3/3076702445/O1CN01cYXd0z1TvquDWnayk_!!3076702445.jpg' },
-      { pic: 'https://gd2.alicdn.com/imgextra/i1/3076702445/O1CN01O3wnaY1TvquJa9f7E_!!3076702445.jpg' }
+    swipers: [{
+        pic: 'https://img.alicdn.com/imgextra/i4/3076702445/O1CN01vTNR5G1TvquHhjt1Z_!!3076702445.jpg'
+      },
+      {
+        pic: 'https://gd2.alicdn.com/imgextra/i1/3076702445/O1CN01O3wnaY1TvquJa9f7E_!!3076702445.jpg'
+      }
     ],
-    menus: [
-    //   { title: '猫粮系列',  url: 'https://gd2.alicdn.com/imgextra/i2/3076702445/TB24ZbZi5qAXuNjy1XdXXaYcVXa_!!3076702445.jpg'},
-    //   { title: '猫冻干',  url: 'https://gd3.alicdn.com/imgextra/i3/3076702445/O1CN011TvqqHvZQ4nYRCu_!!3076702445.jpg', },
-    //   { title: '狗粮系列', url: 'https://gd3.alicdn.com/imgextra/i3/3076702445/TB2z5dFotFopuFjSZFHXXbSlXXa_!!3076702445.jpg'},
-    //   { title: '狗冻干',  url: 'https://gd1.alicdn.com/imgextra/i1/3076702445/O1CN011TvqqIVYLwWcYxP_!!3076702445.jpg'}
-    // 
-    ],
+    menus: [],
     goods: []
   },
-  onLoad(){
+  onLoad() {
     // const userInfo = util.getStorageSync('userInfo')
     // if(util.isEmpty(userInfo)){
     //   wx.redirectTo({
@@ -24,41 +21,49 @@ Page({
     //   })
     // }
 
+    //获取商品列表
     var option = {
       url: 'shop/goods/list'
     };
-
     var success = (res) => {
       if (res.code == 0) {
-        this.setData({ goods: res.data })
+        this.setData({
+          goods: res.data
+        })
+        console.log(1, this.data.goods)
       }
     }
-
     request.request(option, success)
 
+    //获取分类信息
     var optionCategory = {
-      url:"shop/goods/category/all"
+      url: "shop/goods/category/all"
     }
-    var successCategory = (res=>{
-      if(res.code == 0 ){
-        this.setData({menus:res.data})
+    var successCategory = (res => {
+      if (res.code == 0) {
+        this.setData({
+          menus: res.data
+        })
         console.log(this.data.menus)
       }
     })
     request.request(optionCategory, successCategory)
   },
-  showDesc(event){
+  //商品详情跳转
+  showDesc(event) {
     console.log(event)
     var id = event.target.dataset.id
     wx.navigateTo({
-      url: '../descript/descript?id='+id,
+      url: '../descript/descript?id=' + id,
     })
   },
-  toClassify(event){
+  //分类页面跳转
+  //to do list
+  toClassify(event) {
     console.log(event)
     var categoryId = event.target.dataset.categoryId;
     wx.navigateTo({
-      url: '../classify/classify?id='+categoryId,
+      url: '../classify/classify?id=' + categoryId,
     })
   }
 })

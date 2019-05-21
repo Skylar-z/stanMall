@@ -1,1 +1,30 @@
 /* pages/cart/index.wxss */
+.contain{
+  background-color: #fafafa;
+
+}
+.card-wrap{
+  display: flex;
+  align-items: center;
+}
+.checkbox{
+  margin-left: 5px;
+  margin-right: 5px;
+  
+}
+.bink{
+  padding:10px;
+  text-align: center;
+}
+.van-card__footer{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.van-card__footer>input{
+  width: 20px;
+  text-align: center;
+}
+.van-button--mini {
+  width: 30px;
+}

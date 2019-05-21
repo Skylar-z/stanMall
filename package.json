@@ -1,0 +1,22 @@
+{
+  "name": "stanmall",
+  "version": "1.0.0",
+  "description": "Project setup yarn install Compiles and hot-reloads for development yarn run serve Compiles and minifies for production yarn run build Run your tests yarn run test Lints and fixes files yarn run lint",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Skylar-z/stanMall.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Skylar-z/stanMall/issues"
+  },
+  "homepage": "https://github.com/Skylar-z/stanMall#readme",
+  "dependencies": {
+    "wxministore": "^1.2.4"
+  }
+}

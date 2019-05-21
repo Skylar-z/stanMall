@@ -1,13 +1,17 @@
 const request = require('../../utils/request.js')
 var WxParse = require('../../wxParse/wxParse.js');
-
+import Toast from '../../dist/toast/toast.js';
+const app = getApp();
 Page({
   data: {
     swipers: [
       // { url: 'https://gd4.alicdn.com/imgextra/i3/3076702445/O1CN01cYXd0z1TvquDWnayk_!!3076702445.jpg' },
       // { url: 'https://gd2.alicdn.com/imgextra/i1/3076702445/O1CN01O3wnaY1TvquJa9f7E_!!3076702445.jpg' }
     ],
-    good: {}
+    good: {},
+   modalName:"",
+   value:1,
+   total:0
   },
 
   /**
@@ -25,8 +29,6 @@ Page({
         this.setData({
           good: res.data
         });
-        console.log(res.data)
-        console.log(this.data.good)
         var article = this.data.good.content;
 
     /**
@@ -45,7 +47,41 @@ Page({
     request.request(option, success)
 
   },
-  addtocar(){
+  addtocar(event){
+    this.setData({ modalName: event.target.dataset.target})
+   
+  },
+
+  hideModal(){
+    this.setData({ modalName: ""})
+    this.setData({value:1})
+  },
+  submit(){
+
+    //小程序给对象添加属性不能直接用setData
+    var cartList = [];
+    cartList = app.store.$state.cart;
+    var goodMessage = {};
+    goodMessage = this.data.good;
+    goodMessage.value = this.data.value;
+    cartList.push(goodMessage)
+    console.log(goodMessage)
     
+    app.store.setState({
+      cart:cartList
+    })
+
+    this.setData({ modalName: "" })
+    wx.showToast({
+      title: '成功加入购物车',
+    })
+  },
+  turntocar(){
+    wx.switchTab({
+      url: '../cart/index'
+    })
+  },
+  valueChange(event){
+    this.setData({ value: event.detail})
   }
 })

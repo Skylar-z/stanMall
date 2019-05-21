@@ -1,5 +1,7 @@
 <import src="../../wxParse/wxParse.wxml" />
+
 <view>
+  {{$state.msg}}
   <view class="cu-card case {{isCard?'no-card':''}}">
     <view class="cu-item shadow">
       <view class="image">
@@ -20,7 +22,6 @@
         </view>
       </view>
     </view>
-
   </view>
 
   <view class="cu-card dynamic {{isCard?'no-card':''}}">
@@ -76,18 +77,48 @@
           </view>
         </view>
       </view>
-
-     
     </view>
   </view>
 
 
-   <view>
-        <van-goods-action custom-class="goods-action" safe-area-inset-bottom="{{ false }}">
-          <van-goods-action-icon icon="chat-o" text="客服" open-type="contact" />
-          <van-goods-action-icon icon="cart-o" text="购物车" bind:click="onClickIcon" />
-          <van-goods-action-button text="加入购物车" type="warning" bindtap="addtocar" />
-          <van-goods-action-button text="立即购买" bind:click="onClickButton" />
-        </van-goods-action>
+  <!-- <view>
+    <van-goods-action custom-class="goods-action" safe-area-inset-bottom="{{ false }}">
+      <van-goods-action-icon icon="chat-o" text="客服" open-type="contact" />
+      <van-goods-action-icon icon="cart-o" text="购物车" bind:click="turntocar"/>
+      <van-goods-action-button text="加入购物车" type="warning" bindtap="addtocar" data-target="bottomModal" />
+      <van-goods-action-button text="立即购买" bind:click="onClickButton" />
+    </van-goods-action>
+  </view> -->
+  <view class="cu-bar bg-white tabbar border shop">
+    <button class="action" open-type="contact">
+      <view class="cuIcon-service text-green">
+
       </view>
+      客服
+    </button>
+    <view class="action" bindtap="turntocar">
+      <view class="cuIcon-cart">
+        <view class="cu-tag badge">99</view>
+      </view>
+      购物车
+    </view>
+    <view class="bg-orange submit" bindtap="addtocar" data-target="bottomModal">加入购物车</view>
+    <view class="bg-red submit">立即订购</view>
+  </view>
+
+
+  <view class="cu-modal bottom-modal {{modalName=='bottomModal'?'show':''}}">
+    <view class="cu-dialog">
+      <view class="cu-bar bg-white">
+        <view class="action text-green" bind:tap="submit">确定</view>
+        <view class="action text-blue" bindtap="hideModal">取消</view>
+      </view>
+      <view class="padding-xl">
+        <view class="num-picker">
+          <view>选择数量</view>
+          <num-select bindvalueChange="valueChange"></num-select>
+        </view>
+      </view>
+    </view>
+  </view>
 </view>

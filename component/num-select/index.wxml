@@ -1,0 +1,5 @@
+<view class="num-select-wraper">
+  <van-button size="mini" round custom-class="button" bindtap="dec">-</van-button>
+  <input value="{{value}}"></input>
+  <van-button size="mini" round bindtap="add">+</van-button>
+</view>

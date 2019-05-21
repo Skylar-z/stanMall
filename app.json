@@ -1,10 +1,10 @@
 {
   "pages": [
+    "pages/cart/index",
     "pages/index/index",
     "pages/navbar/index",
     "pages/discover/index",
     "pages/classify/index",
-    "pages/cart/index",
     "pages/mine/index",
     "pages/login/index",
     "pages/descript/descript"

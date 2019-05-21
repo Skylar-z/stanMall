@@ -1,0 +1,13 @@
+
+/* component/num-select/index.wxss */
+
+.num-select-wraper{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+input{
+  width:30px;
+  text-align: center;
+}

@@ -21,3 +21,14 @@
 .wxParse-p{
   padding:10px;
 }
+.num-picker{
+  display: flex;
+  justify-content: space-around
+}
+
+.cu-bar.tabbar {
+  position: fixed;
+  bottom:0;
+  left: 0;
+  width:100%
+}
